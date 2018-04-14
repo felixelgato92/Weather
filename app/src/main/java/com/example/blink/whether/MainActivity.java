@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public SparseArray<String> cities = new SparseArray<>();//{"San Francisco, CA", "New York, NY", "Salt Lake City, UT"};
-    private String myApiKey = "ee6713bf30ae2016b951d73627ac668d";
+    private String myApiKey = "b6907d289e10d714a6e88b30761fae22";
     private ListView listView;
 
     private String sampleResponse = "{\"coord\":{\"lon\":145.77,\"lat\":-16.92},\"weather\":[{\"id\":802,\"main\":\"Clouds\",\"description\":\"scattered clouds\",\"icon\":\"03n\"}],\"base\":\"stations\",\"main\":{\"temp\":300.15,\"pressure\":1007,\"humidity\":74,\"temp_min\":300.15,\"temp_max\":300.15},\"visibility\":10000,\"wind\":{\"speed\":3.6,\"deg\":160},\"clouds\":{\"all\":40},\"dt\":1485790200,\"sys\":{\"type\":1,\"id\":8166,\"message\":0.2064,\"country\":\"AU\",\"sunrise\":1485720272,\"sunset\":1485766550},\"id\":2172797,\"name\":\"Cairns\",\"cod\":200}";
@@ -114,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Integer... integers) {
             //TODO samples should be replaced, but there is an invalid API issue that it's not resolve yet
-            String apiCall = "http://samples.openweathermap.org/data/2.5/weather?q=" +  cities.get(integers[0]) + "&appid=" + myApiKey;
+//            http://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22
+            String apiCall = "http://openweathermap.org/data/2.5/weather?id=" + integers[0] + "&appid=" + myApiKey;
             try {
                 // Create a URL indicating where the server is running, and which
                 // web API operation we want to call
